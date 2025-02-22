@@ -1,24 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title lang="en">Fi-Cap's Blog</title>
-<title lang="zh-cn">Fi-Cap 的博客</title>
-<link rel="stylesheet" href="css/snow.css">
+  <meta charset="utf-8">
+  <title lang="en">Fi-Cap's Blog</title>
+  <title lang="zh-cn">Fi-Cap 的博客</title>
+  <link rel="stylesheet" href="css/snow.css">
+  <link rel="stylesheet" href="css/box.css">
+  <link rel="stylesheet" href="css/clock.css">
+  <link rel="javascript" href="js/clock.js">
 </head>
+
 <body>
-  <script>
-  for (let i = 0; i < 100; i++) {
-    const divSnow = document.createElement("div");
-    divSnow.class = "snow"
-  }
-  </script>
-  <div class=text>
-  <h1 lang="en">Welcome to my blog</h1>
-  <h1 lang="zh-cn">欢迎来到我的博客</h1>
-  
-  <p lang="en">It is not yet completed, please stay tuned.</p>
-  <p lang="zh-cn">现在还没有完成，敬请期待</p>
+  <div class="background">
+    <script>
+      const body = document.getElementsByClassName("background")[0];
+
+      for (let i = 0; i < 100; i++) {
+        const divSnow = document.createElement("div");
+        divSnow.classList.add("snow");
+        body.appendChild(divSnow);
+      }
+    </script>
+
+  </div>
+  <div class="container">
+    <div class="box info-box border-box">
+      <div class="container">
+
+        <div class="clock" id="clock">
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+          <em>:</em>
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+          <em>:</em>
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+          <div class="flip down">
+            <div class="digital front number0"></div>
+            <div class="digital back number1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box content-box border-box">
+    <div class="container context">
+      <h1>目录</h1>
+      <p>1.</p>
+      <p>2.</p>
+      <p>3.</p>
+      <p>4.</p>
+      <p>5.</p>
+      <p>6.</p>
+      <p>7.</p>
+      <p>8.</p>
+    </div>
+  </div>
+
+  <div class="box context-box border-box">
+    <div class="container">
+      <h1 lang="en">Welcome to my blog</h1>
+      <h1 lang="zh-cn">欢迎来到我的博客</h1>
+
+      <p lang="en">It is not yet completed, please stay tuned.</p>
+      <p lang="zh-cn">现在还没有完成，敬请期待</p>
+    </div>
+  </div>
   </div>
 </body>
+
 </html>
