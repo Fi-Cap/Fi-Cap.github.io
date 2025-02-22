@@ -6,12 +6,10 @@ body{
 h1 {
   text-align: center;
 }
-
-time {
-  text-align: center;
-  text-shadow: 4px;
-  font-size: 32px;
-  color: blue;
+.github-home  {
+  color: black;
+  margin-top: 32px;
+  
 }
 
 .container {

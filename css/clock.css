@@ -1,22 +1,16 @@
-.single-demo {
-    margin: 50px auto;
-    padding: 30px;
-    width: 600px;
-    text-align: center;
-    border: solid 1px #999;
-}
 
 
 .flip {
     display: inline-block;
     position: relative;
-    width: 60px;
-    height: 100px;
-    line-height: 100px;
+    top: 2vh;
+    width: 6vh;
+    height: 10vh;
+    line-height: 10vh;
     border: solid 1px #000;
     border-radius: 10px;
     background: #fff;
-    font-size: 66px;
+    font-size: 8vh;
     color: #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, .5);
     text-align: center;
@@ -200,8 +194,8 @@
 
 .clock em {
     display: inline-block;
-    line-height: 102px;
-    font-size: 66px;
+    line-height: 12vh;
+    font-size: 10vh;
     font-style: normal;
     vertical-align: top;
 }

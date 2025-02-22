@@ -1,48 +1,34 @@
 var flip = document.getElementById('flip')
 var backNode = document.querySelector('.back')
 var frontNode = document.querySelector('.front')
-var btn1 = document.getElementById('btn1')
-var btn2 = document.getElementById('btn2')
-btn1.addEventListener('click', function () {
-    flipDown();
-})
-btn2.addEventListener('click', function () {
-    flipUp();
-})
-// 当前数字
+
 var count = 0
-// 是否正在翻转（防止翻转未结束就进行下一次翻转）
 var isFlipping = false
 
-// 向下翻转+1
+
 function flipDown() {
-    // 如果处于翻转中，则不执行
     if (isFlipping) {
         return false
     }
-    // 设置前牌的文字
     frontNode.setAttribute('class', 'digital front number' + count)
-    // 计算后牌文字（越界判断）
+   
     var nextCount = count >= 9 ? 0 : (count + 1)
-    // 设置后牌的文字
+   
     backNode.setAttribute('class', 'digital back number' + nextCount)
-    // 添加go，执行翻转动画
     flip.setAttribute('class', 'flip down go')
-    // 当翻转态设置为true
+    
     isFlipping = true
-    // 翻转结束后，恢复状态
+    
     setTimeout(function () {
-        // 去掉go
+  
         flip.setAttribute('class', 'flip down')
-        // 当翻转态设置为false
         isFlipping = false
-        // 设置前牌文字为+1后的数字
+
         frontNode.setAttribute('class', 'digital front number' + nextCount)
-        // 更新当前文字
         count = nextCount
     }, 1000)
 }
-// 向上翻转-1（同理，注释略）
+
 function flipUp() {
     if (isFlipping) {
         return false
@@ -61,18 +47,14 @@ function flipUp() {
 }
 
 
-/* 时钟代码 */
-// 时钟翻牌
+
 function Flipper(config) {
-    // 默认配置
+
     this.config = {
-        // 时钟模块的节点
+
         node: null,
-        // 初始前牌文字
         frontText: 'number0',
-        // 初始后牌文字
         backText: 'number1',
-        // 翻转动画时间（毫秒，与翻转动画CSS 设置的animation-duration时间要一致）
         duration: 600
     }
     // 节点的原本class，与html对应，方便后面添加/删除新的class
@@ -81,19 +63,18 @@ function Flipper(config) {
         front: 'digital front',
         back: 'digital back'
     }
-    // 覆盖默认配置
+
     Object.assign(this.config, config)
-    // 定位前后两个牌的DOM节点
+
     this.frontNode = this.config.node.querySelector('.front')
     this.backNode = this.config.node.querySelector('.back')
-    // 是否处于翻牌动画过程中（防止动画未完成就进入下一次翻牌）
     this.isFlipping = false
-    // 初始化
+
     this._init()
 }
 Flipper.prototype = {
     constructor: Flipper,
-    // 初始化
+  
     _init: function () {
         // 设置初始牌面字符
         this._setFront(this.config.frontText)
